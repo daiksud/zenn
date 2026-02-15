@@ -1,0 +1,7 @@
+{
+  "name": "zenn",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "3.8.1"
+  }
+}
