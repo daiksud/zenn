@@ -2,6 +2,7 @@
   "name": "zenn",
   "type": "module",
   "devDependencies": {
-    "prettier": "3.8.1"
+    "prettier": "^3.8.1",
+    "zenn-cli": "^0.4.5"
   }
 }
