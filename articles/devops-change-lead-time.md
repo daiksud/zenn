@@ -2,7 +2,7 @@
 title: 「変更リードタイム」を正しく理解する
 emoji: ⏰
 type: idea
-topics: ['DevOps']
+topics: ['devops']
 published: true
 published_at: 2025-07-05
 ---
