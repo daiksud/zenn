@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       prettier:
-        specifier: ^3.8.1
-        version: 3.8.1
+        specifier: ^3.8.3
+        version: 3.8.3
       zenn-cli:
-        specifier: ^0.4.5
-        version: 0.4.5
+        specifier: ^0.4.7
+        version: 0.4.7
 
 packages:
 
@@ -54,8 +54,8 @@ packages:
   package-manager-detector@1.6.0:
     resolution: {integrity: sha512-61A5ThoTiDG/C8s8UMZwSorAGwMJ0ERVGj2OjoW5pAalsNOg15+iQiPzrLJ4jhZ1HJzmC2PIHT2oEiH3R5fzNA==}
 
-  prettier@3.8.1:
-    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+  prettier@3.8.3:
+    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -67,8 +67,8 @@ packages:
     resolution: {integrity: sha512-h3Fbisa2nKGPxCpm89Hk33lBLsnaGBvctQopaBSOW/uIs6FTe1ATyAnKFJrzVs9vpGdsTe73WF3V4lIsk4Gacw==}
     engines: {node: '>=18'}
 
-  zenn-cli@0.4.5:
-    resolution: {integrity: sha512-lrG5Bb8j8jhVKRLE1T6Fe/wYV+jBDaRZFHzDatS/tcxcoV1oNaK812PeXYr2rtvH77trZaIag6fYltGXAIN0oA==}
+  zenn-cli@0.4.7:
+    resolution: {integrity: sha512-PkCvxOmP5bvSRx+cGFaXBkOABUez0XVioq91X39oziUppwDPFiT47qlNPX3In8W0/ySASq0ur49TkOTtv5fiIw==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -106,7 +106,7 @@ snapshots:
 
   package-manager-detector@1.6.0: {}
 
-  prettier@3.8.1: {}
+  prettier@3.8.3: {}
 
   run-applescript@7.1.0: {}
 
@@ -114,7 +114,7 @@ snapshots:
     dependencies:
       is-wsl: 3.1.1
 
-  zenn-cli@0.4.5:
+  zenn-cli@0.4.7:
     dependencies:
       open: 10.2.0
       package-manager-detector: 1.6.0
