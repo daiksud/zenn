@@ -1,0 +1,46 @@
+<mxfile host="Electron">
+  <diagram id="figCert" name="certification">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1635" pageHeight="735" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wt6O2aelGT-YSWZ88HgF-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="700" width="1600" x="100" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=45;fontStyle=1;" value="認定プログラムで「お墨付き」を与え、権限を移譲する" vertex="1">
+          <mxGeometry height="60" width="1600" x="100" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="secdept" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=35;fontStyle=1;" value="🏛️ セキュリティ部門" vertex="1">
+          <mxGeometry height="135" width="360" x="135" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="member" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=35;fontStyle=1;" value="🎓 有資格メンバー&lt;br&gt;（開発チーム内）" vertex="1">
+          <mxGeometry height="135" width="420" x="825" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="complete" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=35;" value="✅ チーム内で&lt;br&gt;レビュー完結" vertex="1">
+          <mxGeometry height="135" width="300" x="1365" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" edge="1" parent="1" source="secdept" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#9673a6;fontSize=27;labelBackgroundColor=#ffffff;" target="member" value="認定・トレーニング&lt;br&gt;🎓 お墨付きを付与">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" edge="1" parent="1" source="member" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="complete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bypass" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=30;fontColor=#b85450;fontStyle=2;" value="レビュー依頼は不要（権限移譲）" vertex="1">
+          <mxGeometry height="36" width="750" x="525" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="hr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=35;" value="🗂️ 人事システムで&lt;br&gt;保有資格を管理" vertex="1">
+          <mxGeometry height="135" width="355" x="135" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=32;align=left;verticalAlign=middle;spacingLeft=100;" value="・人材配置やアサインがしやすい&lt;br&gt;・評価や育成目標の基準になる&lt;br&gt;・個人のモチベーションにつながる" vertex="1">
+          <mxGeometry height="135" width="840" x="824" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="h1" edge="1" parent="1" source="hr" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="benefit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=35;" value="資格で「十分な知識を持つ」ことを可視化し、チーム内レビューに権限を移譲する。" vertex="1">
+          <mxGeometry height="60" width="1600" x="100" y="630" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

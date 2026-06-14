@@ -1,0 +1,52 @@
+<mxfile host="Electron">
+  <diagram id="fig1" name="bottleneck">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1635" pageHeight="480" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u3HtAUoKJIkaSHf2serz-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="440" width="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=45;fontStyle=1;" value="価値が届くまでの流れ ——「コードを書く」のはごく一部" vertex="1">
+          <mxGeometry height="60" width="1485" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="顧客の要望" vertex="1">
+          <mxGeometry height="135" width="210" x="30" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=32;" value="⏳&lt;br&gt;何か" vertex="1">
+          <mxGeometry height="135" width="210" x="285" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;fontStyle=1;strokeWidth=5;" value="⚡&lt;br&gt;コーディング&lt;br&gt;（AIで爆速）" vertex="1">
+          <mxGeometry height="135" width="210" x="540" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=32;" value="⏳&lt;br&gt;何か" vertex="1">
+          <mxGeometry height="135" width="210" x="795" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=32;" value="⏳&lt;br&gt;何か" vertex="1">
+          <mxGeometry height="135" width="210" x="1050" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="価値が顧客へ届く" vertex="1">
+          <mxGeometry height="135" width="210" x="1305" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="b1" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="b2" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="b3" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="b4" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="b5" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=35;" value="⚡ AI で速くなったのは「コーディング」だけ" vertex="1">
+          <mxGeometry height="90" width="1485" x="30" y="345" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

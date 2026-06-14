@@ -1,0 +1,46 @@
+<mxfile host="Electron">
+  <diagram id="fig4" name="security-dept-roles">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1620" pageHeight="668" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n8ktVRUqBwqHT9lEnyel-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="640" width="1540" x="50" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=45;fontStyle=1;" value="AI 時代にセキュリティ部門が持つべき 3 つの役割" vertex="1">
+          <mxGeometry height="60" width="1500" x="60" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tL" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=36;fontStyle=1;fontColor=#666666;" value="これまで" vertex="1">
+          <mxGeometry height="45" width="540" x="90" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="L1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="🔍 セキュリティレビュー代行" vertex="1">
+          <mxGeometry height="105" width="540" x="90" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="L2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="📣 セキュリティの啓蒙" vertex="1">
+          <mxGeometry height="105" width="540" x="90" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=5;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="675" y="330" as="sourcePoint" />
+            <mxPoint x="930" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tR" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=36;fontStyle=1;fontColor=#82b366;" value="これから" vertex="1">
+          <mxGeometry height="45" width="570" x="975" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="R1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="🔍 セキュリティレビュー代行" vertex="1">
+          <mxGeometry height="96" width="570" x="975" y="203" as="geometry" />
+        </mxCell>
+        <mxCell id="R2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;fontStyle=1;" value="🎓 トレーニング・認定プログラム&lt;br&gt;&lt;b&gt;NEW&lt;/b&gt;" vertex="1">
+          <mxGeometry height="96" width="570" x="975" y="318" as="geometry" />
+        </mxCell>
+        <mxCell id="R3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;fontStyle=1;" value="⚙️ 自動セキュリティレビュー基盤&lt;br&gt;の構築　&lt;b&gt;NEW&lt;/b&gt;" vertex="1">
+          <mxGeometry height="96" width="570" x="975" y="434" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=30;" value="レビュー代行は継続しつつ、メンバー育成と自動化基盤で「チーム内で完結できる体制」を支援する。" vertex="1">
+          <mxGeometry height="60" width="1500" x="60" y="563" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

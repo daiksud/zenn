@@ -1,0 +1,73 @@
+<mxfile host="Electron">
+  <diagram id="figPlatform" name="platform-inside-security">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="762" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="N1EZLL75GTTcQqMWFEpc-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="740" width="1730" x="40" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=45;fontStyle=1;" value="プラットフォームチームは、必ずセキュリティ部門の中に作る" vertex="1">
+          <mxGeometry height="60" width="1730" x="40" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rl1" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=36;fontStyle=1;fontColor=#b85450;" value="❌ 社外・別部署に委託すると…" vertex="1">
+          <mxGeometry height="42" width="900" x="75" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=32;" value="🏛️ セキュリティ部門" vertex="1">
+          <mxGeometry height="120" width="360" x="75" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=32;" value="🏢 委託先&lt;br&gt;（社外 / 別部署）" vertex="1">
+          <mxGeometry height="120" width="360" x="510" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=32;" value="🛠️ 使いにくいツール&lt;br&gt;（API なし・手作業）" vertex="1">
+          <mxGeometry height="120" width="360" x="945" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=32;fontStyle=1;" value="👩‍💻 開発チーム&lt;br&gt;🚫 使われない" vertex="1">
+          <mxGeometry height="120" width="360" x="1380" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="ae1" edge="1" parent="1" source="a1" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#666666;fontSize=27;labelBackgroundColor=#ffffff;" target="a2" value="委託・要件">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae2" edge="1" parent="1" source="a2" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#666666;fontSize=27;" target="a3" value="納品">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae3" edge="1" parent="1" source="a3" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#b85450;strokeWidth=3;fontSize=32;fontColor=#b85450;" target="a4" value="✕">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="anote" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=30;fontColor=#b85450;" value="委託先の顧客は「セキュリティ部門」。開発者の声が届かず、使い勝手は二の次。当事者意識（パッション）もない。" vertex="1">
+          <mxGeometry height="42" width="1665" x="75" y="309" as="geometry" />
+        </mxCell>
+        <mxCell id="divider" edge="1" parent="1" style="endArrow=none;html=1;strokeColor=#cccccc;strokeWidth=3;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="384" as="sourcePoint" />
+            <mxPoint x="1740" y="384" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rl2" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=36;fontStyle=1;fontColor=#82b366;" value="✅ セキュリティ部門の中に作ると…" vertex="1">
+          <mxGeometry height="42" width="900" x="75" y="423" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=32;verticalAlign=top;spacingTop=12;" value="🏛️ セキュリティ部門" vertex="1">
+          <mxGeometry height="162" width="480" x="75" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="b1in" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=30;fontStyle=1;" value="⚙️ プラットフォームチーム" vertex="1">
+          <mxGeometry height="78" width="420" x="105" y="543" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=32;" value="🛠️ 使いやすいツール&lt;br&gt;（API・自動化対応）" vertex="1">
+          <mxGeometry height="120" width="360" x="780" y="504" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;fontStyle=1;" value="👩‍💻 開発チーム&lt;br&gt;✅ 使われる" vertex="1">
+          <mxGeometry height="120" width="360" x="1380" y="504" as="geometry" />
+        </mxCell>
+        <mxCell id="be1" edge="1" parent="1" source="b1" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#666666;fontSize=27;" target="b2" value="作る">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="be2" edge="1" parent="1" source="b2" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#82b366;strokeWidth=3;fontSize=27;fontColor=#82b366;labelBackgroundColor=#ffffff;" target="b3" value="✅ 使われる">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bnote" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=30;fontColor=#3a7d34;" value="顧客は「開発チーム」。ミッションは『プラットフォームでセキュリティ向上』。だから使いやすさへのパッションが生まれる。" vertex="1">
+          <mxGeometry height="42" width="1730" x="40" y="675" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

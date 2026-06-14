@@ -1,0 +1,111 @@
+<mxfile host="Electron">
+  <diagram id="fig2" name="shift-left">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1635" pageHeight="810" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="h7A5Tt4xxpiPrctOCSKD-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="760" width="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="sep" edge="1" parent="1" style="endArrow=none;html=1;strokeColor=#cccccc;strokeWidth=3;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="30" as="sourcePoint" />
+            <mxPoint x="800" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tL" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=39;fontStyle=1;fontColor=#b85450;" value="❌ 最終段階でだけレビューする" vertex="1">
+          <mxGeometry height="45" width="720" x="45" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="L1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="企画・要件定義" vertex="1">
+          <mxGeometry height="72" width="270" x="270" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="L2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="設計" vertex="1">
+          <mxGeometry height="72" width="270" x="270" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="L3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="開発" vertex="1">
+          <mxGeometry height="72" width="270" x="270" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="L4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="QA" vertex="1">
+          <mxGeometry height="72" width="270" x="270" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="L5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=30;fontStyle=1;" value="🛡️ セキュリティレビュー" vertex="1">
+          <mxGeometry height="72" width="270" x="270" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="Le1" edge="1" parent="1" source="L1" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="L2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Le2" edge="1" parent="1" source="L2" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="L3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Le3" edge="1" parent="1" source="L3" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="L4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Le4" edge="1" parent="1" source="L4" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="L5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lback" edge="1" parent="1" source="L5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#b85450;strokeWidth=4;dashed=1;fontColor=#b85450;fontSize=27;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="L1" value="根幹からやり直し">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="135" y="561" />
+              <mxPoint x="135" y="141" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noteL" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=30;" value="最終段階の指摘で全部やり直しになり、&lt;br&gt;これまでの開発工数がムダになる（巨大な手戻り）" vertex="1">
+          <mxGeometry height="90" width="720" x="40" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="tR" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=39;fontStyle=1;fontColor=#b85450;" value="❌ 全フェーズで承認をもらう" vertex="1">
+          <mxGeometry height="45" width="720" x="855" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="R1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="企画・要件定義" vertex="1">
+          <mxGeometry height="72" width="255" x="885" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="R2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="設計" vertex="1">
+          <mxGeometry height="72" width="255" x="885" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="R3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="開発" vertex="1">
+          <mxGeometry height="72" width="255" x="885" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="R4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;" value="QA" vertex="1">
+          <mxGeometry height="72" width="255" x="885" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="RR1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=27;" value="🛡️ レビュー承認待ち ⏳" vertex="1">
+          <mxGeometry height="72" width="300" x="1245" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="RR2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=27;" value="🛡️ レビュー承認待ち ⏳" vertex="1">
+          <mxGeometry height="72" width="300" x="1245" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="RR3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=27;" value="🛡️ レビュー承認待ち ⏳" vertex="1">
+          <mxGeometry height="72" width="300" x="1245" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="RR4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=27;" value="🛡️ レビュー承認待ち ⏳" vertex="1">
+          <mxGeometry height="72" width="300" x="1245" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="Re1" edge="1" parent="1" source="R1" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="R2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Re2" edge="1" parent="1" source="R2" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="R3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Re3" edge="1" parent="1" source="R3" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;" target="R4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rh1" edge="1" parent="1" source="R1" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#b85450;" target="RR1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rh2" edge="1" parent="1" source="R2" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#b85450;" target="RR2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rh3" edge="1" parent="1" source="R3" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#b85450;" target="RR3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rh4" edge="1" parent="1" source="R4" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#b85450;" target="RR4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="noteR" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=30;" value="コミュニケーション回数が数倍に。&lt;br&gt;レビュー依頼が積み上がり、毎回「数週間待ち」に。" vertex="1">
+          <mxGeometry height="90" width="720" x="840" y="640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,11 @@
+[tools]
+bun = "latest"
+hk = { version = "latest", postinstall = "hk install --mise" }
+rumdl = "latest"
+
+[env]
+HK_MISE = 1
+
+[settings]
+lockfile = true
+experimental = true

@@ -1,0 +1,61 @@
+<mxfile host="Electron">
+  <diagram id="figSummary" name="summary">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1755" pageHeight="921" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m1-5juWWtdb_vTyos7ib-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="900" width="1640" x="80" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=45;fontStyle=1;" value="まとめ：コミュニケーションのボトルネックを解く組織へ" vertex="1">
+          <mxGeometry height="60" width="1640" x="80" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=35;" value="🤖 AI でコーディングは爆速。でも全体は速くならない" vertex="1">
+          <mxGeometry height="90" width="600" x="600" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=35;" value="⏳ ボトルネックはチーム間コミュニケーション" vertex="1">
+          <mxGeometry height="90" width="600" x="600" y="282" as="geometry" />
+        </mxCell>
+        <mxCell id="c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=36;fontStyle=1;" value="🏠 解決策：自チーム内で完結させる" vertex="1">
+          <mxGeometry height="84" width="660" x="570" y="441" as="geometry" />
+        </mxCell>
+        <mxCell id="ab" edge="1" parent="1" source="a" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;fontSize=27;" target="b" value="なぜ？">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bc" edge="1" parent="1" source="b" style="edgeStyle=none;html=1;endArrow=classic;strokeColor=#333333;fontSize=27;" target="c" value="だから">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pil1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;" value="🎓 有資格メンバー&lt;br&gt;がレビュー" vertex="1">
+          <mxGeometry height="108" width="510" x="105" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="pil2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;" value="⚙️ 自動レビュー基盤&lt;br&gt;で底上げ" vertex="1">
+          <mxGeometry height="108" width="510" x="645" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="pil3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=32;" value="🔁 細かい PR で&lt;br&gt;毎日レビュー" vertex="1">
+          <mxGeometry height="108" width="510" x="1185" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="cp1" edge="1" parent="1" source="c" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#82b366;" target="pil1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cp2" edge="1" parent="1" source="c" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#82b366;" target="pil2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cp3" edge="1" parent="1" source="c" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#82b366;" target="pil3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="outcome" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=36;fontStyle=1;" value="🚀 コミュニケーション時間が減り、デリバリが速くなる" vertex="1">
+          <mxGeometry height="96" width="750" x="525" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="po1" edge="1" parent="1" source="pil1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#d6b656;" target="outcome">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="po2" edge="1" parent="1" source="pil2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#d6b656;" target="outcome">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="po3" edge="1" parent="1" source="pil3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#d6b656;" target="outcome">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

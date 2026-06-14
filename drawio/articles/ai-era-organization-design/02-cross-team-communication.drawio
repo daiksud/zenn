@@ -1,0 +1,46 @@
+<mxfile host="Electron">
+  <diagram id="figX" name="cross-team-communication">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1575" pageHeight="1155" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uLgWAeqeJQiySuEuP7ip-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="860" width="1360" x="120" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=45;fontStyle=1;" value="1 つの開発チームが、いくつもの他チームと調整し続けている" vertex="1">
+          <mxGeometry height="60" width="1360" x="120" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dev" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=41;fontStyle=1;" value="開発チーム" vertex="1">
+          <mxGeometry height="120" width="320" x="640" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="arch" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=35;" value="🏛️ アーキテクチャ&lt;br&gt;の精鋭" vertex="1">
+          <mxGeometry height="120" width="320" x="200" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="sec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=35;" value="🛡️ セキュリティ&lt;br&gt;チーム" vertex="1">
+          <mxGeometry height="120" width="320" x="1080" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="qa" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=35;" value="🔍 QA チーム" vertex="1">
+          <mxGeometry height="120" width="320" x="200" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="boss" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=35;" value="👔 上長&lt;br&gt;（デプロイ承認）" vertex="1">
+          <mxGeometry height="120" width="320" x="1080" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="ea" edge="1" parent="1" source="dev" style="edgeStyle=none;html=1;startArrow=classic;endArrow=classic;strokeColor=#888888;fontSize=32;" target="arch" value="設計レビュー依頼&lt;br&gt;⏳ 調整・指摘対応">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es" edge="1" parent="1" source="dev" style="edgeStyle=none;html=1;startArrow=classic;endArrow=classic;strokeColor=#888888;fontSize=32;" target="sec" value="セキュリティレビュー依頼&lt;br&gt;⏳ 数週間待ち">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eq" edge="1" parent="1" source="dev" style="edgeStyle=none;html=1;startArrow=classic;endArrow=classic;strokeColor=#888888;fontSize=32;" target="qa" value="テスト依頼&lt;br&gt;⏳ 完了待ち">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb" edge="1" parent="1" source="dev" style="edgeStyle=none;html=1;startArrow=classic;endArrow=classic;strokeColor=#888888;fontSize=32;" target="boss" value="デプロイ承認依頼&lt;br&gt;⏳ 承認待ち">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=35;" value="チーム外とのやり取りひとつひとつに、調整やレビュー待ちというコストがかかる。&lt;br&gt;これが積み重なって、開発の大きなボトルネックになる。" vertex="1">
+          <mxGeometry height="90" width="1360" x="120" y="870" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

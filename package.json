@@ -2,7 +2,8 @@
   "name": "zenn",
   "type": "module",
   "devDependencies": {
-    "prettier": "^3.8.3",
-    "zenn-cli": "^0.4.7"
+    "@commitlint/cli": "21.0.2",
+    "@commitlint/config-conventional": "21.0.2",
+    "zenn-cli": "0.5.0"
   }
 }
