@@ -1,3 +1,4 @@
-node_modules
 .DS_Store
 .rumdl_cache
+/drawio/**/*.drawio.bkp
+node_modules

@@ -13,7 +13,7 @@
         <mxCell id="tL" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=36;fontStyle=1;fontColor=#666666;" value="これまで" vertex="1">
           <mxGeometry height="45" width="540" x="90" y="135" as="geometry" />
         </mxCell>
-        <mxCell id="L1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="🔍 セキュリティレビュー代行" vertex="1">
+        <mxCell id="L1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="🔍 セキュリティレビュー" vertex="1">
           <mxGeometry height="105" width="540" x="90" y="210" as="geometry" />
         </mxCell>
         <mxCell id="L2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=32;" value="📣 セキュリティの啓蒙" vertex="1">

@@ -7,7 +7,7 @@
       "devDependencies": {
         "@commitlint/cli": "21.0.2",
         "@commitlint/config-conventional": "21.0.2",
-        "zenn-cli": "0.5.0",
+        "zenn-cli": "0.5.1",
       },
     },
   },
@@ -184,7 +184,7 @@
 
     "yargs-parser": ["yargs-parser@22.0.0", "", {}, "sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw=="],
 
-    "zenn-cli": ["zenn-cli@0.5.0", "", { "dependencies": { "open": "^10.2.0", "package-manager-detector": "^1.6.0" }, "bin": { "zenn": "dist/server/zenn.js" } }, "sha512-jjcY3cM9DIIor9pQ9zYOegqdSZ8hsK/rENv90zLnd/uvTq3uNW141tijnKC/NtshI73rUCzhtzIilGS00rCFsw=="],
+    "zenn-cli": ["zenn-cli@0.5.1", "", { "dependencies": { "open": "^10.2.0", "package-manager-detector": "^1.6.0" }, "bin": { "zenn": "dist/server/zenn.js" } }, "sha512-4F5lfW9RZTjPr8CuwUSoCnxcSBYcjJBFas+FombLF/rnOlrJia73b1Jn8laYhWwAmz4cYgJ3OvBApTh80NEHnw=="],
 
     "import-fresh/resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
   }
