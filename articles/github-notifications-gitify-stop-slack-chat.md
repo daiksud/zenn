@@ -1,6 +1,6 @@
 ---
 emoji: 🔔
-published: false
+published: true
 title: GitHub Notifications を使い倒したら、Slack でチャットしなくなった
 topics: ['github', 'slack', 'gitify', 'コミュニケーション', 'チーム開発']
 type: tech
