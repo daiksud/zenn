@@ -1,0 +1,24 @@
+<mxfile host="Electron">
+  <diagram id="fig7" name="error-to-issue">
+    <mxGraphModel dx="1800" dy="820" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="エラー通知も Slack ではなく GitHub Issue に寄せる" style="text;html=1;align=center;verticalAlign=middle;fontSize=46;fontStyle=1;fontColor=#23272e;" vertex="1" parent="1"><mxGeometry x="60" y="35" width="1680" height="70" as="geometry" /></mxCell>
+        <mxCell id="err" value="&lt;font style=&quot;font-size:58px&quot;&gt;🔥&lt;/font&gt;&lt;br&gt;エラー発生" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=34;fontStyle=1;arcSize=12;" vertex="1" parent="1"><mxGeometry x="70" y="330" width="300" height="150" as="geometry" /></mxCell>
+        <mxCell id="sl1" value="&lt;font style=&quot;font-size:58px&quot;&gt;💬&lt;/font&gt;&lt;br&gt;Slack に通知" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=30;fontStyle=1;arcSize=12;" vertex="1" parent="1"><mxGeometry x="520" y="145" width="360" height="135" as="geometry" /></mxCell>
+        <mxCell id="sl2" value="そこで会話が&lt;br&gt;始まってしまう" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=30;arcSize=12;" vertex="1" parent="1"><mxGeometry x="960" y="145" width="360" height="135" as="geometry" /></mxCell>
+        <mxCell id="sl3" value="&lt;font style=&quot;font-size:58px&quot;&gt;❌&lt;/font&gt;&lt;br&gt;ストック化を忘れる" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=30;fontStyle=1;arcSize=12;" vertex="1" parent="1"><mxGeometry x="1400" y="145" width="340" height="135" as="geometry" /></mxCell>
+        <mxCell id="is1" value="&lt;font style=&quot;font-size:58px&quot;&gt;🐛&lt;/font&gt;&lt;br&gt;GitHub Issue を作成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=28;fontStyle=1;arcSize=12;" vertex="1" parent="1"><mxGeometry x="520" y="555" width="360" height="135" as="geometry" /></mxCell>
+        <mxCell id="is2" value="&lt;font style=&quot;font-size:58px&quot;&gt;🔗&lt;/font&gt;&lt;br&gt;修正 PR と紐付け" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=28;fontStyle=1;arcSize=12;" vertex="1" parent="1"><mxGeometry x="960" y="555" width="360" height="135" as="geometry" /></mxCell>
+        <mxCell id="is3" value="&lt;font style=&quot;font-size:58px&quot;&gt;✅&lt;/font&gt;&lt;br&gt;透明性が上がる" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=30;fontStyle=1;arcSize=12;" vertex="1" parent="1"><mxGeometry x="1400" y="555" width="340" height="135" as="geometry" /></mxCell>
+        <mxCell id="eu" value="従来" style="html=1;endArrow=block;endFill=1;strokeColor=#b85450;strokeWidth=5;fontSize=30;fontStyle=1;fontColor=#b85450;rounded=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;" edge="1" parent="1" source="err" target="sl1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ed" value="これから" style="html=1;endArrow=block;endFill=1;strokeColor=#82b366;strokeWidth=5;fontSize=30;fontStyle=1;fontColor=#5a8a3a;rounded=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.7;exitDx=0;exitDy=0;" edge="1" parent="1" source="err" target="is1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="su1" style="html=1;endArrow=block;endFill=1;strokeColor=#b85450;strokeWidth=4;rounded=1;" edge="1" parent="1" source="sl1" target="sl2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="su2" style="html=1;endArrow=block;endFill=1;strokeColor=#b85450;strokeWidth=4;rounded=1;" edge="1" parent="1" source="sl2" target="sl3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="iu1" style="html=1;endArrow=block;endFill=1;strokeColor=#82b366;strokeWidth=4;rounded=1;" edge="1" parent="1" source="is1" target="is2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="iu2" style="html=1;endArrow=block;endFill=1;strokeColor=#82b366;strokeWidth=4;rounded=1;" edge="1" parent="1" source="is2" target="is3"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

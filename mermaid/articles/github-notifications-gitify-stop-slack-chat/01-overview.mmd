@@ -1,0 +1,10 @@
+graph TD
+    subgraph before["Before — 情報が散らばる"]
+        b1["💬 Slack"] -.-> bq["❓ どこで話したっけ？"]
+        b2["📁 GitHub"] -.-> bq
+        b3["📧 メール"] -.-> bq
+    end
+    subgraph after["After — GitHub に集約"]
+        a1["📁 GitHub Issue / PR"] ==> aok["✅ 探すならまず GitHub"]
+    end
+    before ==>|"Gitify を導入"| after

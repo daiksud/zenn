@@ -9,3 +9,7 @@ HK_MISE = 1
 [settings]
 lockfile = true
 experimental = true
+
+[tasks.drawio2webp]
+description = "Render drawio/**/*.drawio to images/**/*.webp (draw.io CLI + cwebp)"
+run = "./scripts/convert.sh"

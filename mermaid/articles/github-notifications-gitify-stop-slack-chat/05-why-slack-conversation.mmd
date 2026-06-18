@@ -1,0 +1,10 @@
+graph LR
+    subgraph slack["Slack"]
+        sn["🔔 通知バッチリ<br>（デスクトップ＋モバイル）"] --> sa["👀 気付きやすい"] --> sc["💬 会話が集まり続く"]
+    end
+    subgraph ghold["GitHub Issue（従来）"]
+        gn["🔕 デスクトップ通知なし"] --> ga["🙈 気付きにくい"] --> gc["↪️ つい Slack で話しかける"]
+    end
+    subgraph ghgitify["GitHub Issue ＋ Gitify"]
+        gn2["🔔 Slack 並みの通知"] --> ga2["👀 気付きやすい"] --> gc2["✅ 会話が GitHub に留まる"]
+    end

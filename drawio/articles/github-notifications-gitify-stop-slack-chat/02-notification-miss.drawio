@@ -1,0 +1,19 @@
+<mxfile host="Electron">
+  <diagram id="fig2" name="notification-miss">
+    <mxGraphModel dx="1780" dy="760" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1780" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="GitHub Notifications は「能動的な確認」に依存している" style="text;html=1;align=center;verticalAlign=middle;fontSize=46;fontStyle=1;fontColor=#23272e;" vertex="1" parent="1"><mxGeometry x="60" y="35" width="1660" height="70" as="geometry" /></mxCell>
+        <mxCell id="s1" value="&lt;font style=&quot;font-size:58px&quot;&gt;🧑‍💻&lt;/font&gt;&lt;br&gt;&lt;b&gt;① あなた&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=34;arcSize=12;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="80" y="190" width="330" height="160" as="geometry" /></mxCell>
+        <mxCell id="s2" value="&lt;font style=&quot;font-size:58px&quot;&gt;📭&lt;/font&gt;&lt;br&gt;&lt;b&gt;② ベルアイコン&lt;/b&gt;&lt;br&gt;未読を気にする" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#666666;fontSize=28;arcSize=12;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="520" y="190" width="330" height="160" as="geometry" /></mxCell>
+        <mxCell id="s3" value="&lt;font style=&quot;font-size:58px&quot;&gt;🖱️&lt;/font&gt;&lt;br&gt;&lt;b&gt;③ クリックして&lt;br&gt;確認&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=30;arcSize=12;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="960" y="190" width="330" height="160" as="geometry" /></mxCell>
+        <mxCell id="s4" value="&lt;font style=&quot;font-size:58px&quot;&gt;😴&lt;/font&gt;&lt;br&gt;&lt;b&gt;④ メンション&lt;br&gt;見逃し&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=30;fontColor=#a01818;arcSize=12;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="1400" y="190" width="300" height="160" as="geometry" /></mxCell>
+        <mxCell id="a1" value="能動的に気にする" style="html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;strokeWidth=4;fontSize=26;fontStyle=1;fontColor=#3b5a7a;rounded=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s1" target="s2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a2" value="未読がありそう？" style="html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;strokeWidth=4;fontSize=26;fontStyle=1;fontColor=#3b5a7a;rounded=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s2" target="s3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a3" value="気付かなければ放置" style="html=1;endArrow=block;endFill=1;dashed=1;strokeColor=#b85450;strokeWidth=4;fontSize=26;fontStyle=1;fontColor=#b85450;rounded=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s3" target="s4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="caption" value="&lt;font style=&quot;font-size:54px&quot;&gt;⚠️&lt;/font&gt; どのステップも「能動的な行動」に依存&lt;br&gt;全員に徹底させるのは難しく、どこかで必ず破綻する" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=30;fontStyle=1;fontColor=#7f6000;arcSize=8;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="230" y="475" width="1320" height="135" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,16 @@
+sequenceDiagram
+    actor A as Aさん
+    participant GH as GitHub Issue / PR
+    actor B as Bさん
+    participant SL as Slack
+    actor C as Cさん（後任）
+    A->>GH: PR で B さんにメンション 📣
+    Note over B: 通知に気付かない 😴
+    A->>SL: 「#123 の件いかがですか？」
+    B->>SL: つい Slack で返事してしまう
+    A->>SL: 議論がそのまま Slack で進む
+    Note over GH,SL: 🔴 コンテキストが分断
+    B-->>GH: 決定事項だけ唐突に PR へ反映
+    Note over A,C: 数ヶ月後…
+    C->>GH: PR を見ても経緯が辿れない 🔍
+    C->>SL: 知ってそうな人に「また」Slack で質問
