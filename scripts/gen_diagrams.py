@@ -115,24 +115,24 @@ def pill(cx, cy, w, h, label, fill, tcolor="#FFFFFF", size=19, weight=700, emoji
     return out
 
 
-def title_block(w, emj, title, subtitle, y=74):
-    out = text(w/2, y, f"{emj}　{title}", 37, TXT, 800, "middle")
+def title_block(w, emj, title, subtitle, y=56, tsize=29, ssize=18):
+    out = text(w/2, y, f"{emj}　{title}", tsize, TXT, 800, "middle")
     if subtitle:
-        out += text(w/2, y + 38, subtitle, 20.5, TXT2, 500, "middle")
+        out += text(w/2, y + tsize*1.12, subtitle, ssize, TXT2, 500, "middle")
     return out
 
 
-def chip(x, y, w, h, label, icon, pal, size=18.5, lines=None):
+def chip(x, y, w, h, label, icon, pal, size=20, lines=None, lh=26):
     """left-aligned info row: icon + text within a soft box."""
     out = plain_card(x, y, w, h, fill="#FFFFFFEE", stroke=PAL[pal]['g2'], rx=12, sw=1.5)
-    out += emoji(x + 30, y + h/2 + 8, icon, 27)
-    tx = x + 58
+    out += emoji(x + 32, y + h/2 + 9, icon, 29)
+    tx = x + 64
     if lines:
         n = len(lines)
-        start = y + h/2 - (n-1)*12 + 6
-        out += mtext(tx, start, lines, size, PAL[pal]['text'], 600, "start", lh=24)
+        start = y + h/2 - (n-1)*lh/2 + size*0.34
+        out += mtext(tx, start, lines, size, PAL[pal]['text'], 600, "start", lh=lh)
     else:
-        out += text(tx, y + h/2 + 7, label, size, PAL[pal]['text'], 600, "start")
+        out += text(tx, y + h/2 + size*0.34, label, size, PAL[pal]['text'], 600, "start")
     return out
 
 
@@ -143,236 +143,233 @@ def save(name, body):
     print("wrote", path)
 
 
+# Figures are authored at a narrow width on purpose: Zenn renders images at
+# ~700px wide, so display font ≈ svg_font × 700 / W. Keeping W small (~820-940)
+# lets normal font sizes (~19-23) read at ~16px, matching the article body.
+
 # ───────────────────────── Diagram 1 ─────────────────────────
 def d1():
-    W, H = 1200, 800
+    W, H = 940, 900
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🤖", "1人1AI時代がやってくる",
-                     "ほとんどの人が、スマホで動く“自分専用のAIエージェント”を持つ", y=78)
+                     "ほとんどの人が、スマホで動く“自分専用のAIエージェント”を持つ",
+                     y=64, tsize=31, ssize=19)
 
     cols = [
-        (270, "🧑", "Aさん", '「沖縄に行きたいから', ['ホテルと飛行機を', '予約しといて」']),
-        (600, "🧑‍🦰", "Bさん", '「あの人のライブの', ['チケットを', '買っといて」']),
-        (930, "🧑‍🦱", "Cさん", '「あれやって」', ['「これやって」', 'と頼むだけ']),
+        (190, "🧑", "Aさん", '「沖縄に行きたいから', ['ホテルと飛行機を', '予約しといて」']),
+        (470, "🧑‍🦰", "Bさん", '「あの人のライブの', ['チケットを', '買っといて」']),
+        (750, "🧑‍🦱", "Cさん", '「あれやって」', ['「これやって」', 'と頼むだけ']),
     ]
     for cx, ava, name, l0, rest in cols:
-        # avatar
-        s += f'<circle cx="{cx}" cy="208" r="46" fill="#FFFFFF" stroke="{PAL["blue"]["accent"]}" stroke-width="2.5" filter="url(#sh2)"/>'
-        s += emoji(cx, 224, ava, 46)
-        s += pill(cx, 280, 104, 32, name, PAL['blue']['accent'], "#FFFFFF", 17, 700)
-        s += arrow(cx, 300, cx, 326, 'blue', 2.6)
+        s += f'<circle cx="{cx}" cy="220" r="46" fill="#FFFFFF" stroke="{PAL["blue"]["accent"]}" stroke-width="2.5" filter="url(#sh2)"/>'
+        s += emoji(cx, 236, ava, 48)
+        s += pill(cx, 292, 118, 38, name, PAL['blue']['accent'], "#FFFFFF", 20, 700)
+        s += arrow(cx, 313, cx, 340, 'blue', 2.6)
         # phone with AI
-        s += card(cx-86, 330, 172, 168, 'blue', rx=22)
-        s += plain_card(cx-64, 352, 128, 96, fill="#FFFFFF", stroke="#BFDBFE", rx=10, sh=False)
-        s += emoji(cx, 416, "🤖", 50)
-        s += text(cx, 478, "自分のAIエージェント", 16, PAL['blue']['text'], 700)
+        s += card(cx-88, 344, 176, 178, 'blue', rx=22)
+        s += plain_card(cx-66, 368, 132, 100, fill="#FFFFFF", stroke="#BFDBFE", rx=10, sh=False)
+        s += emoji(cx, 436, "🤖", 54)
+        s += text(cx, 500, "自分のAIエージェント", 19, PAL['blue']['text'], 700)
         # request bubble
-        by = 534
-        s += card(cx-152, by, 304, 150, 'violet', rx=18)
-        # tail
-        s += f'<path d="M{cx-12},{by+1} L{cx+12},{by+1} L{cx},{by-15} z" fill="url(#g-violet)" stroke="{PAL["violet"]["stroke"]}" stroke-width="2"/>'
-        s += f'<rect x="{cx-12}" y="{by-2}" width="24" height="6" fill="url(#g-violet)"/>'
-        s += mtext(cx, by+52, [l0]+rest, 20, PAL['violet']['text'], 600, "middle", lh=33)
+        by = 560
+        s += card(cx-134, by, 268, 168, 'violet', rx=18)
+        s += f'<path d="M{cx-13},{by+1} L{cx+13},{by+1} L{cx},{by-16} z" fill="url(#g-violet)" stroke="{PAL["violet"]["stroke"]}" stroke-width="2"/>'
+        s += f'<rect x="{cx-13}" y="{by-2}" width="26" height="6" fill="url(#g-violet)"/>'
+        s += mtext(cx, by+54, [l0]+rest, 22, PAL['violet']['text'], 600, "middle", lh=36)
 
-    # bottom banner
-    s += pill(W/2, 742, 660, 50, "まるで、全員に専属の秘書がついたかのよう", PAL['teal']['stroke'], "#FFFFFF", 22, 800, emoji_ch="💁")
+    s += pill(W/2, 848, 720, 56, "まるで、全員に専属の秘書がついたかのよう", PAL['teal']['stroke'], "#FFFFFF", 24, 800, emoji_ch="💁")
     save("01-one-ai-per-person.svg", s)
 
 
 # ───────────────────────── Diagram 2 ─────────────────────────
 def d2():
-    W, H = 1220, 770
+    W, H = 860, 1180
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🆚", "「コンシェルジュ」と「専属秘書」は何が違うのか",
-                     "知っている“コンテキスト”が、応対の質を分ける", y=74)
+                     "知っている“コンテキスト”が、応対の質を分ける",
+                     y=60, tsize=28, ssize=18)
 
     # user request card
-    s += plain_card(W/2-330, 128, 660, 60, fill="#EFF6FF", stroke=PAL['blue']['stroke'], rx=16)
-    s += emoji(W/2-300, 165, "🧑", 26, "start")
-    s += text(W/2+14, 165, "ユーザー：「沖縄に行きたいからホテルと飛行機を予約して」", 19.5, PAL['blue']['text'], 700)
+    s += plain_card(W/2-318, 124, 636, 64, fill="#EFF6FF", stroke=PAL['blue']['stroke'], rx=16)
+    s += emoji(W/2-292, 165, "🧑", 28, "start")
+    s += text(W/2+16, 165, "ユーザー：「沖縄に行きたいからホテルと飛行機を予約して」", 19, PAL['blue']['text'], 700)
+    s += arrow(W/2, 192, W/2, 216, 'gray', 2.6)
 
-    # two columns
-    L, R = 322, 898
-    cw, cy, ch = 540, 232, 446
-    s += arrow(W/2-150, 192, L+40, cy-6, 'gray', 2.4)
-    s += arrow(W/2+150, 192, R-40, cy-6, 'gray', 2.4)
+    def panel(y, pal, emj, title, sub, chips, think_icon, think, bullets):
+        cx0, cw = 40, W-80
+        out = card(cx0, y, cw, 428, pal, rx=20)
+        out += emoji(cx0+44, y+52, emj, 36)
+        out += text(cx0+88, y+46, title, 24, PAL[pal]['text'], 800, "start")
+        out += text(cx0+88, y+74, sub, 17, MUTED, 500, "start")
+        bx, bw = cx0+28, cw-56
+        cy0 = y+100
+        for (ic, tx, tp) in chips:
+            out += chip(bx, cy0, bw, 56, tx, ic, tp, size=20)
+            cy0 += 70
+        tb = cy0 + 8
+        out += plain_card(bx, tb, bw, 178, fill="#FFFFFFEE", stroke=PAL[pal]['g2'], rx=12)
+        out += emoji(bx+28, tb+44, think_icon, 28, "start")
+        out += text(bx+64, tb+42, think, 20, PAL[pal]['text'], 700, "start")
+        out += mtext(bx+38, tb+86, bullets, 19, TXT2, 500, "start", lh=34)
+        return out
 
-    # Concierge (amber)
-    s += card(L-cw/2, cy, cw, ch, 'amber', rx=20)
-    s += emoji(L-cw/2+44, cy+44, "🛎️", 34)
-    s += text(L-cw/2+76, cy+38, "AIコンシェルジュ", 23, PAL['amber']['text'], 800, "start")
-    s += text(L-cw/2+76, cy+64, "サービス側に常駐している", 15.5, MUTED, 500, "start")
-    bx = L-cw/2+26
-    s += chip(bx, cy+90, cw-52, 50, "知っている：サービスのコンテキスト", "✅", 'teal', 18)
-    s += chip(bx, cy+150, cw-52, 50, "知らない：あなた個人のコンテキスト", "🚫", 'rose', 18)
-    s += plain_card(bx, cy+212, cw-52, 206, fill="#FFFFFFEE", stroke=PAL['amber']['g2'], rx=12)
-    s += emoji(bx+24, cy+248, "🤔", 26, "start")
-    s += text(bx+54, cy+247, "無難な質問しかできない", 18.5, PAL['amber']['text'], 700, "start")
-    s += mtext(bx+30, cy+288, [
-        "・「行き先は本島？ 石垣島？」",
-        "・「どんなホテルがお好みで？」",
-        "・「航空会社は JAL？ ANA？」",
-    ], 17.5, TXT2, 500, "start", lh=37)
+    s += panel(226, 'amber', "🛎️", "AIコンシェルジュ", "サービス側に常駐している",
+               [("✅", "知っている：サービスのコンテキスト", 'teal'),
+                ("🚫", "知らない：あなた個人のコンテキスト", 'rose')],
+               "🤔", "無難な質問しかできない",
+               ["・「行き先は本島？ 石垣島？」",
+                "・「どんなホテルがお好みで？」",
+                "・「航空会社は JAL？ ANA？」"])
 
-    # Secretary (violet)
-    s += card(R-cw/2, cy, cw, ch, 'violet', rx=20)
-    s += emoji(R-cw/2+44, cy+44, "🤝", 34)
-    s += text(R-cw/2+76, cy+38, "専属の秘書（あなたのAI）", 23, PAL['violet']['text'], 800, "start")
-    s += text(R-cw/2+76, cy+64, "あなた側に常駐している", 15.5, MUTED, 500, "start")
-    bx2 = R-cw/2+26
-    s += chip(bx2, cy+90, cw-52, 50, "知っている：あなた個人のコンテキスト", "✅", 'teal', 18)
-    s += chip(bx2, cy+150, cw-52, 50, "過去の旅行や好みもすべて把握", "✅", 'teal', 18)
-    s += plain_card(bx2, cy+212, cw-52, 206, fill="#FFFFFFEE", stroke=PAL['violet']['g2'], rx=12)
-    s += emoji(bx2+24, cy+248, "💡", 26, "start")
-    s += text(bx2+54, cy+247, "先回りして提案できる", 18.5, PAL['violet']['text'], 700, "start")
-    s += mtext(bx2+30, cy+288, [
-        "・「本島と石垣は訪問済→宮古島は？」",
-        "・「いつもの星野リゾート系列で？」",
-        "・「いつもの JAL ファーストで？」",
-    ], 17, TXT2, 500, "start", lh=37)
+    s += emoji(W/2, 678, "🆚", 30)
 
-    s += text(W/2, 712, "同じ依頼でも、“知っているコンテキスト”の差で応対の質はこれだけ変わる", 19, TXT2, 600)
+    s += panel(694, 'violet', "🤝", "専属の秘書（あなたのAI）", "あなた側に常駐している",
+               [("✅", "知っている：あなた個人のコンテキスト", 'teal'),
+                ("✅", "過去の旅行や好みもすべて把握している", 'teal')],
+               "💡", "先回りして提案できる",
+               ["・「本島と石垣は訪問済みなので宮古島は？」",
+                "・「いつもの星野リゾート系列で？」",
+                "・「いつもの JAL ファーストクラスで？」"])
+
+    s += text(W/2, 1156, "同じ依頼でも、“知っているコンテキスト”の差で応対の質はこれだけ変わる", 18.5, TXT2, 600)
     save("02-concierge-vs-secretary.svg", s)
 
 
 # ───────────────────────── Diagram 3 ─────────────────────────
 def d3():
-    W, H = 1200, 600
+    W, H = 900, 640
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🚪", "人間は、あなたのサービスに“来なくなる”",
-                     "アクセスするのは本人ではなく、その人のAIエージェント", y=70)
+                     "アクセスするのは本人ではなく、その人のAIエージェント",
+                     y=62, tsize=28, ssize=18)
 
     def node(cx, cy, w, h, pal, emj, lines):
         out = card(cx-w/2, cy-h/2, w, h, pal, rx=18)
-        out += emoji(cx, cy-6, emj, 44)
-        out += mtext(cx, cy+34, lines, 17.5, PAL[pal]['text'], 700, "middle", lh=22)
+        out += emoji(cx, cy-8, emj, 46)
+        out += mtext(cx, cy+32, lines, 20, PAL[pal]['text'], 700, "middle", lh=24)
         return out
 
     # Band 1: 従来
-    y1 = 210
-    s += pill(120, y1, 150, 40, "従来", PAL['slate']['accent'], "#FFFFFF", 19, 800)
-    s += node(360, y1, 200, 116, 'blue', "🧑", ["人間"])
-    s += node(820, y1, 240, 116, 'amber', "🖥️", ["Webサイト", "サービス"])
-    s += arrow(468, y1, 696, y1, 'blue', 3)
-    s += text(582, y1-20, "自分で訪問・操作", 17, TXT2, 600)
+    y1 = 232
+    s += pill(106, y1, 132, 44, "従来", PAL['slate']['accent'], "#FFFFFF", 21, 800)
+    s += node(326, y1, 196, 124, 'blue', "🧑", ["人間"])
+    s += node(712, y1, 232, 124, 'amber', "🖥️", ["Webサイト", "サービス"])
+    s += arrow(426, y1, 594, y1, 'blue', 3)
+    s += text(510, y1-22, "自分で訪問・操作", 18, TXT2, 600)
 
-    # divider
-    s += f'<line x1="80" y1="312" x2="{W-80}" y2="312" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3 6"/>'
+    s += f'<line x1="70" y1="346" x2="{W-70}" y2="346" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3 6"/>'
 
     # Band 2: 1人1AI時代
-    y2 = 430
-    s += pill(120, y2, 178, 40, "1人1AI時代", PAL['teal']['stroke'], "#FFFFFF", 18, 800)
-    s += node(330, y2, 176, 116, 'blue', "🧑", ["人間"])
-    s += node(620, y2, 210, 116, 'violet', "🤖", ["AIエージェント"])
-    s += node(950, y2, 210, 116, 'amber', "🖥️", ["サービス"])
-    s += arrow(420, y2, 513, y2, 'blue', 3)
-    s += text(466, y2-20, "依頼", 16.5, TXT2, 600)
-    s += arrow(727, y2, 843, y2, 'violet', 3)
-    s += text(785, y2-20, "代わりにアクセス", 16.5, TXT2, 600)
-    # crossed direct path human -> service
-    s += f'<path d="M330,{y2+62} C330,548 950,548 950,{y2+62}" fill="none" stroke="{PAL["rose"]["accent"]}" stroke-width="2.4" stroke-dasharray="3 7" stroke-linecap="round"/>'
-    s += pill(640, 548, 250, 38, "人間はもう直接は来ない", PAL['rose']['stroke'], "#FFFFFF", 17, 700, emoji_ch="🚫")
+    y2 = 462
+    s += pill(118, y2, 168, 44, "1人1AI時代", PAL['teal']['stroke'], "#FFFFFF", 20, 800)
+    s += node(312, y2, 168, 124, 'blue', "🧑", ["人間"])
+    s += node(540, y2, 204, 124, 'violet', "🤖", ["AIエージェント"])
+    s += node(770, y2, 160, 124, 'amber', "🖥️", ["サービス"])
+    s += arrow(398, y2, 436, y2, 'blue', 3)
+    s += text(417, y2-22, "依頼", 18, TXT2, 600)
+    s += arrow(644, y2, 688, y2, 'violet', 3)
+    s += text(666, y2-22, "代わりに", 17, TXT2, 600)
+    s += text(666, y2-2, "アクセス", 17, TXT2, 600)
+    s += f'<path d="M312,{y2+62} C312,586 770,586 770,{y2+62}" fill="none" stroke="{PAL["rose"]["accent"]}" stroke-width="2.4" stroke-dasharray="3 7" stroke-linecap="round"/>'
+    s += pill(541, 588, 280, 42, "人間はもう直接は来ない", PAL['rose']['stroke'], "#FFFFFF", 19, 700, emoji_ch="🚫")
     save("03-human-does-not-visit.svg", s)
 
 
 # ───────────────────────── Diagram 4 ─────────────────────────
 def d4():
-    W, H = 1220, 700
+    W, H = 900, 760
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🔌", "エージェント時代に、サービスが用意すべきもの",
-                     "対人間のコンシェルジュではなく、AIが“使える・分かる”入口を", y=72)
+                     "対人間のコンシェルジュではなく、AIが“使える・分かる”入口を",
+                     y=60, tsize=27, ssize=18)
 
     # agent (left)
-    ay = 360
-    s += card(70, ay-66, 214, 132, 'violet', rx=20)
-    s += emoji(177, ay-12, "🤖", 46)
-    s += mtext(177, ay+30, ["ユーザーの", "AIエージェント"], 17.5, PAL['violet']['text'], 700, "middle", lh=22)
+    s += card(48, 356, 208, 150, 'violet', rx=20)
+    s += emoji(152, 414, "🤖", 50)
+    s += mtext(152, 458, ["ユーザーの", "AIエージェント"], 19, PAL['violet']['text'], 700, "middle", lh=24)
 
     # service container (right)
-    sx, sy, sw2, sh2 = 360, 150, 790, 460
+    sx, sy, sw2, sh2 = 296, 152, 560, 560
     s += card(sx, sy, sw2, sh2, 'slate', rx=22, sw=2)
-    s += emoji(sx+44, sy+46, "🏢", 30)
-    s += text(sx+76, sy+40, "サービス", 23, TXT, 800, "start")
-    s += text(sx+76, sy+66, "AIエージェントを“顧客”として迎える", 15.5, MUTED, 500, "start")
+    s += emoji(sx+42, sy+48, "🏢", 32)
+    s += text(sx+82, sy+42, "サービス", 24, TXT, 800, "start")
+    s += text(sx+82, sy+70, "AIエージェントを“顧客”として迎える", 16.5, MUTED, 500, "start")
 
-    ix = sx + 30
-    iw = sw2 - 60
+    ix = sx + 28
+    iw = sw2 - 56
     # bad item (rose, strike)
-    s += plain_card(ix, sy+88, iw, 58, fill="#FFF1F2", stroke=PAL['rose']['g2'], rx=12)
-    s += emoji(ix+30, sy+88+36, "🚫", 25, "start")
-    s += (f'<text x="{ix+60}" y="{sy+88+36}" font-size="18.5" fill="{PAL["rose"]["text"]}" '
-          f'font-weight="600" text-anchor="start" text-decoration="line-through">'
+    s += plain_card(ix, sy+92, iw, 64, fill="#FFF1F2", stroke=PAL['rose']['g2'], rx=12)
+    s += emoji(ix+30, sy+92+40, "🚫", 27, "start")
+    s += (f'<text x="{ix+66}" y="{sy+92+33}" font-size="20" fill="{PAL["rose"]["text"]}" '
+          f'font-weight="700" text-anchor="start" text-decoration="line-through">'
           f'対“人間”のAIコンシェルジュ</text>')
-    s += text(ix+iw-24, sy+88+36, "エージェント相手では効果が薄い", 16, MUTED, 500, "end")
+    s += text(ix+66, sy+92+55, "AIエージェント相手では効果が薄い", 16, MUTED, 500, "start")
 
-    # good items 2x2
-    gy = sy + 170
-    row_h, gap_y, gap_x = 108, 18, 24
-    gw = (iw - gap_x) / 2
+    # good items: single column, full width
+    gy = sy + 172
+    row_h, gap = 78, 14
     items = [
-        ("✅", ["エージェントが使えるAPI"], "teal", None),
-        ("✅", ["AIが理解できる使い方", "（API ドキュメント）"], "teal", None),
-        ("✅", ["MCP サーバー"], "teal", None),
-        ("✅", ["対エージェントの", "AIコンシェルジュ"], "amber", "📚 サービスのコンテキストを提供"),
+        ("✅", "エージェントが使える API", 'teal', None),
+        ("✅", "AI が理解できる API ドキュメント", 'teal', None),
+        ("✅", "MCP サーバー", 'teal', None),
+        ("✅", "対エージェントの AIコンシェルジュ", 'amber', "📚 サービスのコンテキストを提供する"),
     ]
-    pos = [(ix, gy), (ix+gw+gap_x, gy),
-           (ix, gy+row_h+gap_y), (ix+gw+gap_x, gy+row_h+gap_y)]
-    lh = 26
-    for (icon, lines, pal, sub), (px, py) in zip(items, pos):
-        s += plain_card(px, py, gw, row_h, fill="#FFFFFF", stroke=PAL[pal]['g2'], rx=14)
-        mid = py + row_h/2
-        s += emoji(px+30, mid+9, icon, 25, "start")
-        n = len(lines)
-        size = 18 if n == 1 else 17.5
+    for i, (icon, label, pal, sub) in enumerate(items):
+        py = gy + i*(row_h+gap)
+        s += plain_card(ix, py, iw, row_h, fill="#FFFFFF", stroke=PAL[pal]['g2'], rx=14)
+        s += emoji(ix+32, py + (row_h/2) + 10, icon, 27, "start")
         if sub:
-            first = mid - (n-1)*lh/2 - 8
-            s += mtext(px+62, first, lines, size, PAL[pal]['text'], 700, "start", lh=lh)
-            s += text(px+62, first + (n-1)*lh + 27, sub, 14.5, MUTED, 600, "start")
+            s += text(ix+68, py+34, label, 20, PAL[pal]['text'], 700, "start")
+            s += text(ix+68, py+60, sub, 15.5, MUTED, 600, "start")
         else:
-            first = mid - (n-1)*lh/2 + 6
-            s += mtext(px+62, first, lines, size, PAL[pal]['text'], 700, "start", lh=lh)
+            s += text(ix+68, py + (row_h/2) + 8, label, 20, PAL[pal]['text'], 700, "start")
 
     # arrows agent <-> service
-    s += arrow(284, 354, sx-6, gy+row_h/2, 'violet', 3)
-    s += mtext((284+sx)/2, 322, ["API / MCP", "経由でアクセス"], 15.5, TXT2, 700, "middle", lh=20)
-    r2c = gy + row_h + gap_y + row_h/2
-    s += (f'<path d="M{sx-6},{r2c} C300,560 250,470 286,392" fill="none" '
+    s += arrow(256, 404, sx-4, gy+row_h/2, 'violet', 3)
+    s += mtext((256+sx)/2-2, 372, ["API / MCP", "でアクセス"], 16, TXT2, 700, "middle", lh=20)
+    r4c = gy + 3*(row_h+gap) + row_h/2
+    s += (f'<path d="M{sx-4},{r4c} C250,600 210,500 256,452" fill="none" '
           f'stroke="{PAL["amber"]["accent"]}" stroke-width="2.4" stroke-dasharray="2 7" '
           f'stroke-linecap="round" marker-end="url(#arr-amber)"/>')
-    s += text(232, 556, "知り得ない情報を補完", 15, PAL['amber']['text'], 700)
+    s += mtext(150, 568, ["知り得ない", "情報を補完"], 16, PAL['amber']['text'], 700, "middle", lh=20)
     save("04-service-needs-api.svg", s)
 
 
 # ───────────────────────── Diagram 5 ─────────────────────────
 def d5():
-    W, H = 1200, 600
+    W, H = 900, 600
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "✨", "UX から AX へ",
-                     "これから重要になるのは「AIエージェント体験（AX）」", y=72)
+                     "これから重要になるのは「AIエージェント体験（AX）」",
+                     y=62, tsize=30, ssize=18)
 
-    cy, cw, ch = 180, 446, 320
-    L, R = 70, 684
+    cy, cw, ch = 168, 346, 362
+    L, R = 44, 510
 
     # past
     s += card(L, cy, cw, ch, 'slate', rx=22)
-    s += pill(L+cw/2, cy+44, 200, 44, "これまで", PAL['slate']['accent'], "#FFFFFF", 20, 800)
-    s += chip(L+30, cy+86, cw-60, 64, "各サービスがAIコンシェルジュを用意", "🖥️", 'amber', 18, lines=["各サービスが", "AIコンシェルジュを用意"])
-    s += chip(L+30, cy+160, cw-60, 64, "人間が自らサービスを使う", "🧑", 'blue', 18)
-    s += plain_card(L+30, cy+234, cw-60, 62, fill="#FFF7ED", stroke=PAL['amber']['stroke'], rx=14, sw=1.5)
-    s += text(L+cw/2, cy+272, "👀 UX（ユーザー体験）が競争力", 19.5, PAL['amber']['text'], 800)
+    s += pill(L+cw/2, cy+46, 190, 46, "これまで", PAL['slate']['accent'], "#FFFFFF", 21, 800)
+    s += chip(L+26, cy+90, cw-52, 72, "", "🖥️", 'amber', size=19,
+              lines=["各サービスが", "AIコンシェルジュを用意"], lh=27)
+    s += chip(L+26, cy+176, cw-52, 72, "", "🧑", 'blue', size=19,
+              lines=["人間が自ら", "サービスを使う"], lh=27)
+    s += plain_card(L+26, cy+260, cw-52, 72, fill="#FFF7ED", stroke=PAL['amber']['stroke'], rx=14, sw=1.5)
+    s += mtext(L+cw/2, cy+288, ["👀 UX（ユーザー体験）", "が競争力"], 19, PAL['amber']['text'], 800, "middle", lh=26)
 
-    # arrow
-    midx = L+cw+ (R-(L+cw))/2
-    s += emoji(midx, cy+ch/2-18, "➡️", 50)
-    s += pill(midx, cy+ch/2+34, 168, 38, "パラダイムシフト", PAL['teal']['stroke'], "#FFFFFF", 16.5, 800)
+    # center
+    midx = L+cw + (R-(L+cw))/2
+    s += emoji(midx, cy+ch/2-12, "➡️", 46)
+    s += text(midx, cy+ch/2+34, "パラダイムシフト", 14.5, PAL['teal']['stroke'], 800)
 
     # future
     s += card(R, cy, cw, ch, 'teal', rx=22, sw=2.4)
-    s += pill(R+cw/2, cy+44, 200, 44, "これから", PAL['teal']['stroke'], "#FFFFFF", 20, 800)
-    s += chip(R+30, cy+86, cw-60, 64, "各サービスがAPI / MCPを用意", "🔌", 'teal', 18, lines=["各サービスが", "API / MCPサーバーを用意"])
-    s += chip(R+30, cy+160, cw-60, 64, "人間は自分のAIエージェントに依頼", "🤖", 'violet', 18, lines=["人間は自分の", "AIエージェントに依頼"])
-    s += plain_card(R+30, cy+234, cw-60, 62, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.8)
-    s += text(R+cw/2, cy+272, "✨ AX（AIエージェント体験）が競争力", 18.5, PAL['teal']['text'], 800)
+    s += pill(R+cw/2, cy+46, 190, 46, "これから", PAL['teal']['stroke'], "#FFFFFF", 21, 800)
+    s += chip(R+26, cy+90, cw-52, 72, "", "🔌", 'teal', size=19,
+              lines=["各サービスが", "API / MCP サーバーを用意"], lh=27)
+    s += chip(R+26, cy+176, cw-52, 72, "", "🤖", 'violet', size=19,
+              lines=["人間は自分の", "AIエージェントに依頼"], lh=27)
+    s += plain_card(R+26, cy+260, cw-52, 72, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.8)
+    s += mtext(R+cw/2, cy+288, ["✨ AX（AIエージェント体験）", "が競争力"], 18, PAL['teal']['text'], 800, "middle", lh=26)
     save("05-ux-to-ax.svg", s)
 
 
