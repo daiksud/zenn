@@ -151,7 +151,7 @@ W = 700
 
 # ───────────────────────── Diagram 1 ─────────────────────────
 def d1():
-    H = 690
+    H = 634
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🤖", "1人1AI時代がやってくる",
                      "ほとんどの人が、スマホで動く“自分専用のAIエージェント”を持つ",
@@ -163,31 +163,71 @@ def d1():
         (568, "🧑‍🦱", "Cさん", ["「あれやって」", "「これやって」", "と頼むだけ"]),
     ]
     for cx, ava, name, req in cols:
-        s += (f'<circle cx="{cx}" cy="158" r="38" fill="#FFFFFF" '
+        # person (the speaker) on top
+        s += (f'<circle cx="{cx}" cy="148" r="36" fill="#FFFFFF" '
               f'stroke="{PAL["blue"]["accent"]}" stroke-width="2.5" filter="url(#sh2)"/>')
-        s += emoji(cx, 172, ava, 40)
-        s += pill(cx, 214, 92, 32, name, PAL['blue']['accent'], "#FFFFFF", 15, 700)
-        s += arrow(cx, 232, cx, 252, 'blue', 2.4)
-        # phone with AI
-        s += card(cx-76, 256, 152, 146, 'blue', rx=20)
-        s += plain_card(cx-56, 276, 112, 80, fill="#FFFFFF", stroke="#BFDBFE", rx=10, sh=False)
-        s += emoji(cx, 334, "🤖", 44)
-        s += text(cx, 390, "自分のAIエージェント", 14, PAL['blue']['text'], 700)
-        # request bubble
-        by = 424
-        s += card(cx-100, by, 200, 132, 'violet', rx=16)
+        s += emoji(cx, 161, ava, 38)
+        s += pill(cx, 198, 88, 30, name, PAL['blue']['accent'], "#FFFFFF", 15, 700)
+        # speech bubble spoken BY the person (tail points up to them)
+        by = 226
+        s += card(cx-100, by, 200, 122, 'violet', rx=16)
         s += (f'<path d="M{cx-11},{by+1} L{cx+11},{by+1} L{cx},{by-14} z" '
               f'fill="url(#g-violet)" stroke="{PAL["violet"]["stroke"]}" stroke-width="2"/>')
         s += f'<rect x="{cx-11}" y="{by-2}" width="22" height="6" fill="url(#g-violet)"/>'
-        s += mtext(cx, by+44, req, 15, PAL['violet']['text'], 600, "middle", lh=30)
+        s += mtext(cx, by+42, req, 15, PAL['violet']['text'], 600, "middle", lh=28)
+        # delegates down to the AI agent
+        s += arrow(cx, by+122, cx, by+150, 'blue', 2.4)
+        # AI agent on the phone (the one who carries out the task)
+        py = 378
+        s += card(cx-76, py, 152, 140, 'blue', rx=20)
+        s += plain_card(cx-56, py+18, 112, 74, fill="#FFFFFF", stroke="#BFDBFE", rx=10, sh=False)
+        s += emoji(cx, py+66, "🤖", 42)
+        s += text(cx, py+120, "自分のAIエージェント", 14, PAL['blue']['text'], 700)
 
-    s += pill(W/2, 632, 600, 48, "まるで、全員に専属の秘書がついたかのよう",
+    s += pill(W/2, 576, 600, 48, "まるで、全員に専属の秘書がついたかのよう",
               PAL['teal']['stroke'], "#FFFFFF", 17, 800, emoji_ch="💁")
     save("01-one-ai-per-person.svg", s)
 
 
 # ───────────────────────── Diagram 2 ─────────────────────────
 def d2():
+    H = 612
+    s = svg_open(W, H) + page_bg(W, H)
+    s += title_block(W, "🛎️", "今の「AI対応」は“サービス側のAI”",
+                     "各サービスが、自社の案内役として AI コンシェルジュを持つ",
+                     y=48, tsize=23, ssize=14)
+
+    cols = [
+        (132, "🏨", ["ホテル予約", "サービス"], ["「どんなお部屋を", "ご希望ですか？」"]),
+        (350, "✈️", ["航空券", "サービス"],   ["「行き先はどちら", "ですか？」"]),
+        (568, "🛒", ["EC サイト"],            ["「何をお探し", "ですか？」"]),
+    ]
+    for cx, icon, sname, ask in cols:
+        # the service (owner) on top
+        s += card(cx-76, 118, 152, 92, 'amber', rx=18)
+        s += emoji(cx, 158, icon, 38)
+        s += mtext(cx, 190, sname, 14.5, PAL['amber']['text'], 700, "middle", lh=18)
+        s += arrow(cx, 212, cx, 240, 'amber', 2.4)
+        # the AI concierge belongs to the service (mirrors the phone in fig 1)
+        s += card(cx-80, 244, 160, 120, 'amber', rx=20)
+        s += plain_card(cx-58, 262, 116, 60, fill="#FFFFFF", stroke="#FCD9A5", rx=10, sh=False)
+        s += emoji(cx, 308, "🛎️", 38)
+        s += text(cx, 350, "AIコンシェルジュ", 14, PAL['amber']['text'], 700)
+        # the concierge asks a generic question (tail points up to the concierge)
+        by = 386
+        s += card(cx-100, by, 200, 92, 'slate', rx=16)
+        s += (f'<path d="M{cx-11},{by+1} L{cx+11},{by+1} L{cx},{by-14} z" '
+              f'fill="url(#g-slate)" stroke="{PAL["slate"]["stroke"]}" stroke-width="2"/>')
+        s += f'<rect x="{cx-11}" y="{by-2}" width="22" height="6" fill="url(#g-slate)"/>'
+        s += mtext(cx, by+40, ask, 14.5, PAL['slate']['text'], 600, "middle", lh=26)
+
+    s += pill(W/2, 544, 626, 50, "AIは“サービス側”にいて、あなた個人のことは知らない",
+              PAL['amber']['stroke'], "#FFFFFF", 16, 800, emoji_ch="🛎️")
+    save("02-services-have-concierge.svg", s)
+
+
+# ───────────────────────── Diagram 3 ─────────────────────────
+def d3():
     H = 1086
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🆚", "「コンシェルジュ」と「専属秘書」は何が違うのか",
@@ -237,11 +277,11 @@ def d2():
 
     s += text(W/2, 1058, "同じ依頼でも、“知っているコンテキスト”の差で応対の質はこれだけ変わる",
               15, TXT2, 600)
-    save("02-concierge-vs-secretary.svg", s)
+    save("03-concierge-vs-secretary.svg", s)
 
 
-# ───────────────────────── Diagram 3 ─────────────────────────
-def d3():
+# ───────────────────────── Diagram 4 ─────────────────────────
+def d4():
     H = 548
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🚪", "人間は、あなたのサービスに“来なくなる”",
@@ -277,11 +317,11 @@ def d3():
     s += (f'<path d="M90,{y2+50} C90,476 610,476 610,{y2+50}" fill="none" '
           f'stroke="{PAL["rose"]["accent"]}" stroke-width="2.2" stroke-dasharray="3 7" stroke-linecap="round"/>')
     s += pill(350, 480, 252, 38, "人間はもう直接は来ない", PAL['rose']['stroke'], "#FFFFFF", 15, 700, emoji_ch="🚫")
-    save("03-human-does-not-visit.svg", s)
+    save("04-human-does-not-visit.svg", s)
 
 
-# ───────────────────────── Diagram 4 ─────────────────────────
-def d4():
+# ───────────────────────── Diagram 5 ─────────────────────────
+def d5():
     H = 760
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🔌", "エージェント時代に、サービスが用意すべきもの",
@@ -333,11 +373,11 @@ def d4():
             s += text(ix+62, py+54, sub, 13.5, MUTED, 600, "start")
         else:
             s += text(ix+62, py + row_h/2 + 7, label, 18, PAL[pal]['text'], 700, "start")
-    save("04-service-needs-api.svg", s)
+    save("05-service-needs-api.svg", s)
 
 
-# ───────────────────────── Diagram 5 ─────────────────────────
-def d5():
+# ───────────────────────── Diagram 6 ─────────────────────────
+def d6():
     H = 520
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "✨", "UX から AX へ",
@@ -371,8 +411,8 @@ def d5():
               lines=["人間は自分の", "AIエージェントに依頼"], icon_size=23, icon_off=27, txoff=50)
     s += plain_card(R+22, cy+250, cw-44, 72, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.8)
     s += mtext(R+cw/2, cy+280, ["✨ AX（AIエージェント体験）", "が競争力"], 14, PAL['teal']['text'], 800, "middle", lh=24)
-    save("05-ux-to-ax.svg", s)
+    save("06-ux-to-ax.svg", s)
 
 
-d1(); d2(); d3(); d4(); d5()
+d1(); d2(); d3(); d4(); d5(); d6()
 print("done")
