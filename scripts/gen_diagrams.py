@@ -414,5 +414,58 @@ def d6():
     save("06-ux-to-ax.svg", s)
 
 
-d1(); d2(); d3(); d4(); d5(); d6()
+# ───────────────────────── Diagram 7 ─────────────────────────
+def d7():
+    H = 730
+    s = svg_open(W, H) + page_bg(W, H)
+    s += title_block(W, "🧭", "AIコンシェルジュとAIエージェントの「連携範囲」の差",
+                     "サービス内に閉じるか、目的単位で横断できるか",
+                     y=48, tsize=22, ssize=14)
+
+    y0, cw, ch = 108, 292, 574
+    L, R = 24, 384
+
+    # Left: service-side concierge (silo)
+    s += card(L, y0, cw, ch, 'amber', rx=20)
+    s += pill(L+cw/2, y0+42, 194, 40, "🛎️ AIコンシェルジュ", PAL['amber']['stroke'], "#FFFFFF", 16, 800)
+    s += plain_card(L+20, y0+80, cw-40, 72, fill="#FFFFFF", stroke=PAL['amber']['g2'], rx=12)
+    s += mtext(L+cw/2, y0+109, ["ホテル予約サービス", "の中だけで動く"], 15, PAL['amber']['text'], 700, "middle", lh=22)
+    s += plain_card(L+20, y0+168, cw-40, 70, fill="#FFFFFF", stroke=PAL['amber']['g2'], rx=12)
+    s += mtext(L+cw/2, y0+196, ["✅ ホテル予約はできる"], 16, PAL['teal']['text'], 700, "middle", lh=22)
+    s += plain_card(L+20, y0+254, cw-40, 210, fill="#FFF7ED", stroke=PAL['amber']['stroke'], rx=14, sw=1.5)
+    s += mtext(L+cw/2, y0+286,
+               ["🚫 航空券予約", "🚫 レンタカー予約", "🚫 アクティビティ予約", "（他サービスは扱えない）"],
+               15, TXT2, 600, "middle", lh=40)
+
+    # Right: personal AI agent (cross-service orchestration)
+    s += card(R, y0, cw, ch, 'teal', rx=20, sw=2.2)
+    s += pill(R+cw/2, y0+42, 214, 40, "🤖 個人のAIエージェント", PAL['teal']['stroke'], "#FFFFFF", 16, 800)
+    s += plain_card(R+20, y0+80, cw-40, 72, fill="#FFFFFF", stroke=PAL['teal']['g2'], rx=12)
+    s += mtext(R+cw/2, y0+109, ["目的は「沖縄旅行を完了する」", "こと"], 15, PAL['teal']['text'], 700, "middle", lh=22)
+
+    cx = R + cw/2
+    cy = y0 + 248
+    s += plain_card(cx-74, cy-32, 148, 64, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=32, sw=1.8)
+    s += mtext(cx, cy-3, ["🏝️ 沖縄旅行"], 16, PAL['teal']['text'], 800, "middle", lh=22)
+
+    services = [
+        (R+56, y0+340, "🏨", "ホテル"),
+        (R+168, y0+340, "✈️", "航空券"),
+        (R+56, y0+420, "🚗", "レンタカー"),
+        (R+168, y0+420, "🤿", "アクティビティ"),
+    ]
+    for sx, sy, ic, lb in services:
+        s += plain_card(sx, sy, 96, 64, fill="#FFFFFF", stroke=PAL['teal']['g2'], rx=12)
+        s += emoji(sx+24, sy+43, ic, 22, "middle")
+        s += text(sx+58, sy+42, lb, 14, PAL['teal']['text'], 700, "middle")
+        s += (f'<path d="M{cx},{cy+32} C{cx},{cy+84} {sx+48},{sy-16} {sx+48},{sy}" '
+              f'fill="none" stroke="{PAL["teal"]["accent"]}" stroke-width="2.2" '
+              f'stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#arr-teal)"/>')
+
+    s += plain_card(R+20, y0+500, cw-40, 44, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.5)
+    s += text(R+cw/2, y0+528, "旅程作成〜現地ナビまで一気通貫で実行できる", 14, PAL['teal']['text'], 700)
+    save("07-cross-service-orchestration.svg", s)
+
+
+d1(); d2(); d3(); d4(); d5(); d6(); d7()
 print("done")
