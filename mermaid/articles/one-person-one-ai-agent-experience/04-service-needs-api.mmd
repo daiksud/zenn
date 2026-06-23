@@ -1,0 +1,17 @@
+graph LR
+    agent["🤖 ユーザーの<br/>AI エージェント"]
+
+    subgraph service["🏢 サービスが用意すべきもの"]
+        direction TB
+        bad["❌ 対人間の AI コンシェルジュ<br/>（エージェント相手では効果が薄い）"]
+        api["✅ エージェントが使える API"]
+        doc["✅ エージェントが理解できる使い方<br/>（API ドキュメント）"]
+        mcp["✅ MCP サーバー"]
+        conci["✅ 対エージェントの AI コンシェルジュ<br/>📚 サービスのコンテキストを提供"]
+    end
+
+    agent ==>|"API / MCP 経由でアクセス"| api
+    agent ==>|"MCP 経由で対話"| mcp
+    mcp --- conci
+    api --- doc
+    conci -.->|"エージェントが知り得ない情報を補完"| agent

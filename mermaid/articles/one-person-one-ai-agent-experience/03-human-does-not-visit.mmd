@@ -1,0 +1,14 @@
+graph LR
+    subgraph before["従来：人間が自らアクセスする"]
+        direction LR
+        h1["🧑 人間"] ==>|"自分で訪問・操作"| w1["🖥️ Web サイト / サービス"]
+    end
+
+    subgraph after["1 人 1 AI 時代：人間は訪れない"]
+        direction LR
+        h2["🧑 人間"] -->|"「あれやって」と依頼"| a2["🤖 自分の AI エージェント"]
+        h2 -. "❌ 人間はもう来ない" .-> w2
+        a2 ==>|"代わりにアクセス"| w2["🖥️ Web サイト / サービス"]
+    end
+
+    before ==> after
