@@ -1,7 +1,7 @@
 ---
-emoji: 🧚‍♀️
-published: false
-title: 全員がAIを持つ「1人1AI」時代が訪れる。その時「AI-UX」が重要になるだろう
+emoji: 🗝️
+published: true
+title: 「1人1AI」時代は必ず訪れる。その時代では「AI-UX」が鍵となる
 topics: ['ai', 'aiエージェント', 'mcp', 'ux', 'design']
 type: tech
 ---
