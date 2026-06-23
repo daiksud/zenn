@@ -4,6 +4,8 @@
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
+    "@mermaid-js/mermaid-cli": "^11.15.0",
+    "puppeteer-core": "^25.2.0",
     "zenn-cli": "0.5.1"
   }
 }
