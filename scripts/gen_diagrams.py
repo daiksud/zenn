@@ -380,8 +380,8 @@ def d5():
 def d6():
     H = 520
     s = svg_open(W, H) + page_bg(W, H)
-    s += title_block(W, "✨", "UX から AX へ",
-                     "これから重要になるのは「AIエージェント体験（AX）」",
+    s += title_block(W, "✨", "UX から AI-UX へ",
+                     "これから重要になるのは「AIエージェント向けUX（AI-UX）」",
                      y=48, tsize=24, ssize=14)
 
     cw, ch, cy = 290, 360, 108
@@ -410,60 +410,73 @@ def d6():
     s += chip(R+22, cy+168, cw-44, 70, "", "🤖", 'violet', size=14, lh=21,
               lines=["人間は自分の", "AIエージェントに依頼"], icon_size=23, icon_off=27, txoff=50)
     s += plain_card(R+22, cy+250, cw-44, 72, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.8)
-    s += mtext(R+cw/2, cy+280, ["✨ AX（AIエージェント体験）", "が競争力"], 14, PAL['teal']['text'], 800, "middle", lh=24)
+    s += mtext(R+cw/2, cy+280, ["✨ AI-UX（AIエージェント向けUX）", "が競争力"], 13, PAL['teal']['text'], 800, "middle", lh=24)
     save("06-ux-to-ax.svg", s)
 
 
 # ───────────────────────── Diagram 7 ─────────────────────────
 def d7():
-    H = 730
+    H = 760
     s = svg_open(W, H) + page_bg(W, H)
     s += title_block(W, "🧭", "AIコンシェルジュとAIエージェントの「連携範囲」の差",
                      "サービス内に閉じるか、目的単位で横断できるか",
                      y=48, tsize=22, ssize=14)
 
-    y0, cw, ch = 108, 292, 574
-    L, R = 24, 384
+    y0, cw, ch = 108, 312, 608
+    L, R = 24, 364
 
-    # Left: service-side concierge (silo)
+    # Left: service-side concierge (single-service silo)
     s += card(L, y0, cw, ch, 'amber', rx=20)
-    s += pill(L+cw/2, y0+42, 194, 40, "🛎️ AIコンシェルジュ", PAL['amber']['stroke'], "#FFFFFF", 16, 800)
-    s += plain_card(L+20, y0+80, cw-40, 72, fill="#FFFFFF", stroke=PAL['amber']['g2'], rx=12)
-    s += mtext(L+cw/2, y0+109, ["ホテル予約サービス", "の中だけで動く"], 15, PAL['amber']['text'], 700, "middle", lh=22)
-    s += plain_card(L+20, y0+168, cw-40, 70, fill="#FFFFFF", stroke=PAL['amber']['g2'], rx=12)
-    s += mtext(L+cw/2, y0+196, ["✅ ホテル予約はできる"], 16, PAL['teal']['text'], 700, "middle", lh=22)
-    s += plain_card(L+20, y0+254, cw-40, 210, fill="#FFF7ED", stroke=PAL['amber']['stroke'], rx=14, sw=1.5)
-    s += mtext(L+cw/2, y0+286,
-               ["🚫 航空券予約", "🚫 レンタカー予約", "🚫 アクティビティ予約", "（他サービスは扱えない）"],
-               15, TXT2, 600, "middle", lh=40)
+    s += pill(L+cw/2, y0+42, 206, 40, "🛎️ AIコンシェルジュ", PAL['amber']['stroke'], "#FFFFFF", 16, 800)
+    s += plain_card(L+20, y0+80, cw-40, 66, fill="#FFFFFF", stroke=PAL['amber']['g2'], rx=12)
+    s += text(L+cw/2, y0+120, "ホテル予約サービス内で動作", 15, PAL['amber']['text'], 700)
 
-    # Right: personal AI agent (cross-service orchestration)
+    s += plain_card(L+20, y0+162, cw-40, 62, fill="#ECFDF5", stroke=PAL['teal']['g2'], rx=12)
+    s += text(L+cw/2, y0+200, "✅ ホテル予約はできる", 16, PAL['teal']['text'], 700)
+
+    limits = [
+        ("🚫", "航空券予約は不可"),
+        ("🚫", "レンタカー予約は不可"),
+        ("🚫", "アクティビティ予約は不可"),
+        ("🚫", "他サービスの情報参照は不可"),
+    ]
+    for i, (ic, label) in enumerate(limits):
+        py = y0 + 242 + i*74
+        s += plain_card(L+20, py, cw-40, 62, fill="#FFF7ED", stroke=PAL['amber']['stroke'], rx=12, sw=1.3)
+        s += emoji(L+48, py+40, ic, 20)
+        s += text(L+84, py+39, label, 15, TXT2, 600, "start")
+
+    s += plain_card(L+20, y0+546, cw-40, 54, fill="#FFF7ED", stroke=PAL['amber']['stroke'], rx=14, sw=1.5)
+    s += mtext(L+cw/2, y0+568, ["依頼は丁寧に処理できるが、", "サービスの外へは出られない"], 14, PAL['amber']['text'], 700, "middle", lh=20)
+
+    # Right: personal AI agent (goal-oriented orchestration)
     s += card(R, y0, cw, ch, 'teal', rx=20, sw=2.2)
-    s += pill(R+cw/2, y0+42, 214, 40, "🤖 個人のAIエージェント", PAL['teal']['stroke'], "#FFFFFF", 16, 800)
-    s += plain_card(R+20, y0+80, cw-40, 72, fill="#FFFFFF", stroke=PAL['teal']['g2'], rx=12)
-    s += mtext(R+cw/2, y0+109, ["目的は「沖縄旅行を完了する」", "こと"], 15, PAL['teal']['text'], 700, "middle", lh=22)
+    s += pill(R+cw/2, y0+42, 224, 40, "🤖 個人のAIエージェント", PAL['teal']['stroke'], "#FFFFFF", 16, 800)
+    s += plain_card(R+20, y0+80, cw-40, 66, fill="#FFFFFF", stroke=PAL['teal']['g2'], rx=12)
+    s += text(R+cw/2, y0+120, "目的起点でタスクを束ねる", 15, PAL['teal']['text'], 700)
 
     cx = R + cw/2
-    cy = y0 + 248
-    s += plain_card(cx-74, cy-32, 148, 64, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=32, sw=1.8)
-    s += mtext(cx, cy-3, ["🏝️ 沖縄旅行"], 16, PAL['teal']['text'], 800, "middle", lh=22)
+    cy = y0 + 224
+    s += plain_card(cx-86, cy-30, 172, 60, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=30, sw=1.8)
+    s += text(cx, cy+8, "🏝️ 目的：沖縄旅行を成立", 15, PAL['teal']['text'], 800)
 
     services = [
-        (R+56, y0+340, "🏨", "ホテル"),
-        (R+168, y0+340, "✈️", "航空券"),
-        (R+56, y0+420, "🚗", "レンタカー"),
-        (R+168, y0+420, "🤿", "アクティビティ"),
+        (R+30,  y0+302, "🏨", "ホテル予約"),
+        (R+172, y0+302, "✈️", "航空券予約"),
+        (R+30,  y0+378, "🚗", "レンタカー"),
+        (R+172, y0+378, "🤿", "アクティビティ"),
+        (R+101, y0+454, "🗺️", "現地ナビ"),
     ]
     for sx, sy, ic, lb in services:
-        s += plain_card(sx, sy, 96, 64, fill="#FFFFFF", stroke=PAL['teal']['g2'], rx=12)
-        s += emoji(sx+24, sy+43, ic, 22, "middle")
-        s += text(sx+58, sy+42, lb, 14, PAL['teal']['text'], 700, "middle")
-        s += (f'<path d="M{cx},{cy+32} C{cx},{cy+84} {sx+48},{sy-16} {sx+48},{sy}" '
+        s += plain_card(sx, sy, 132, 62, fill="#FFFFFF", stroke=PAL['teal']['g2'], rx=12)
+        s += emoji(sx+23, sy+40, ic, 20)
+        s += text(sx+42, sy+39, lb, 13, PAL['teal']['text'], 700, "start")
+        s += (f'<path d="M{cx},{cy+30} C{cx},{cy+82} {sx+55},{sy-14} {sx+55},{sy}" '
               f'fill="none" stroke="{PAL["teal"]["accent"]}" stroke-width="2.2" '
               f'stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#arr-teal)"/>')
 
-    s += plain_card(R+20, y0+500, cw-40, 44, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.5)
-    s += text(R+cw/2, y0+528, "旅程作成〜現地ナビまで一気通貫で実行できる", 14, PAL['teal']['text'], 700)
+    s += plain_card(R+20, y0+546, cw-40, 54, fill="#ECFEFF", stroke=PAL['teal']['stroke'], rx=14, sw=1.5)
+    s += mtext(R+cw/2, y0+568, ["旅程作成から現地ナビまで、", "横断的に一気通貫で実行できる"], 14, PAL['teal']['text'], 700, "middle", lh=20)
     save("07-cross-service-orchestration.svg", s)
 
 
