@@ -10,14 +10,6 @@ HK_MISE = 1
 lockfile = true
 experimental = true
 
-[tasks.drawio2webp]
-description = "Render drawio/**/*.drawio to images/**/*.webp (draw.io CLI + cwebp)"
-run = "./scripts/convert.sh"
-
-[tasks.diagrams]
-description = "Generate hand-crafted SVGs (svg/) from scripts/gen_diagrams.py"
-run = "python3 scripts/gen_diagrams.py"
-
 [tasks.svg2webp]
 description = "Render svg/**/*.svg to images/**/*.webp (Chrome @2x + cwebp)"
 run = "node scripts/svg2webp.mjs"

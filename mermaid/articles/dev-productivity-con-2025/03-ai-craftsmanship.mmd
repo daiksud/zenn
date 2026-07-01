@@ -1,0 +1,15 @@
+sequenceDiagram
+  participant H as 🧠 人間
+  participant AI as 🤖 AI
+  rect rgb(254, 242, 242)
+  Note over H,AI: AIに丸投げ
+  H->>AI: 曖昧な指示（丸投げ）
+  AI-->>H: 今は動くが将来つらい設計
+  end
+  rect rgb(240, 253, 244)
+  Note over H,AI: 使いこなす（元々優秀な人）
+  H->>AI: 文脈を渡す的確な指示
+  AI-->>H: 使い物になる出力
+  H->>H: 出力を見極める
+  end
+  Note over H,AI: 差がつくのは人間側

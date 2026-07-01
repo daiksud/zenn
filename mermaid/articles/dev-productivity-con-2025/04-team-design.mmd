@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph before["巨大な単一チーム"]
+    sofa["🛋️ 1つのソファを大人数で運ぶ<br/>意思疎通できず混乱"]
+  end
+  subgraph after["分割された自律チーム＋共通基盤"]
+    a["👥 チームA"]
+    b["👥 チームB"]
+    c["👥 チームC"]
+    plat["🧱 共通プラットフォーム<br/>技術スタックの乱立を防ぐ"]
+    a --- plat
+    b --- plat
+    c --- plat
+  end
+  before ==>|"単純化・分割（チームトポロジー）"| after

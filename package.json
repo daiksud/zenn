@@ -2,10 +2,10 @@
   "name": "zenn",
   "type": "module",
   "devDependencies": {
-    "@commitlint/cli": "21.0.2",
-    "@commitlint/config-conventional": "21.0.2",
+    "@commitlint/cli": "21.1.0",
+    "@commitlint/config-conventional": "21.1.0",
     "@mermaid-js/mermaid-cli": "^11.15.0",
-    "puppeteer-core": "^25.2.0",
-    "zenn-cli": "0.5.1"
+    "puppeteer-core": "^25.2.1",
+    "zenn-cli": "0.5.2"
   }
 }
