@@ -1,0 +1,10 @@
+stateDiagram-v2
+  direction LR
+  [*] --> 指標を目標化: Productivity = Output / Input
+  指標を目標化 --> ズルが起きる: PR分割・障害を報告しない
+  ズルが起きる --> 計測が無意味化
+  計測が無意味化 --> 指標を目標化: 悪循環
+  note right of 指標を目標化
+    グッドハートの法則
+    測定が目標になると良い測定でなくなる
+  end note
